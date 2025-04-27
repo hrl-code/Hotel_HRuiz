@@ -156,6 +156,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoLocalidad_RH
             // 
+            this.campoLocalidad_RH.Enabled = false;
             this.campoLocalidad_RH.Location = new System.Drawing.Point(123, 226);
             this.campoLocalidad_RH.Name = "campoLocalidad_RH";
             this.campoLocalidad_RH.Size = new System.Drawing.Size(183, 20);
@@ -173,6 +174,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoCP_RH
             // 
+            this.campoCP_RH.Enabled = false;
             this.campoCP_RH.Location = new System.Drawing.Point(123, 200);
             this.campoCP_RH.Name = "campoCP_RH";
             this.campoCP_RH.Size = new System.Drawing.Size(128, 20);
@@ -190,6 +192,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoDireccion_RH
             // 
+            this.campoDireccion_RH.Enabled = false;
             this.campoDireccion_RH.Location = new System.Drawing.Point(123, 174);
             this.campoDireccion_RH.Name = "campoDireccion_RH";
             this.campoDireccion_RH.Size = new System.Drawing.Size(231, 20);
@@ -207,6 +210,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoEmail_RH
             // 
+            this.campoEmail_RH.Enabled = false;
             this.campoEmail_RH.Location = new System.Drawing.Point(123, 148);
             this.campoEmail_RH.Name = "campoEmail_RH";
             this.campoEmail_RH.Size = new System.Drawing.Size(183, 20);
@@ -224,6 +228,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoTelefono_RH
             // 
+            this.campoTelefono_RH.Enabled = false;
             this.campoTelefono_RH.Location = new System.Drawing.Point(123, 122);
             this.campoTelefono_RH.Name = "campoTelefono_RH";
             this.campoTelefono_RH.Size = new System.Drawing.Size(128, 20);
@@ -241,6 +246,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoApellidos_RH
             // 
+            this.campoApellidos_RH.Enabled = false;
             this.campoApellidos_RH.Location = new System.Drawing.Point(123, 96);
             this.campoApellidos_RH.Name = "campoApellidos_RH";
             this.campoApellidos_RH.Size = new System.Drawing.Size(183, 20);
@@ -258,6 +264,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoNombre_RH
             // 
+            this.campoNombre_RH.Enabled = false;
             this.campoNombre_RH.Location = new System.Drawing.Point(123, 70);
             this.campoNombre_RH.Name = "campoNombre_RH";
             this.campoNombre_RH.Size = new System.Drawing.Size(114, 20);

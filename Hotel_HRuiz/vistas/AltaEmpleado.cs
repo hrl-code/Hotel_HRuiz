@@ -15,6 +15,7 @@ namespace Hotel_HRuiz.vistas
         public AltaEmpleado()
         {
             InitializeComponent();
+            comboTurno_RE.SelectedIndex = 0;
         }
 
         private void botonRegistrarEmpleado_RE_Click(object sender, EventArgs e)

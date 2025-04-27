@@ -259,6 +259,12 @@ namespace Hotel_HRuiz.vistas
             // comboTurno_RE
             // 
             this.comboTurno_RE.FormattingEnabled = true;
+            this.comboTurno_RE.Items.AddRange(new object[] {
+            "Seleccione",
+            "mañanas",
+            "tardes",
+            "noches",
+            "partido"});
             this.comboTurno_RE.Location = new System.Drawing.Point(156, 201);
             this.comboTurno_RE.Name = "comboTurno_RE";
             this.comboTurno_RE.Size = new System.Drawing.Size(121, 21);

@@ -17,6 +17,7 @@ namespace Hotel_HRuiz.vistas
         public ReservaHabitaciones()
         {
             InitializeComponent();
+            comboTipo_RH.SelectedIndex = 0;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
