@@ -1,4 +1,7 @@
-﻿namespace Hotel_HRuiz.vistas
+﻿using System.Windows.Forms;
+using bbdd;
+
+namespace Hotel_HRuiz.vistas
 {
     partial class VerReservaSalones
     {
@@ -29,18 +32,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fecha = new System.Windows.Forms.DateTimePicker();
+            this.botonActualles = new System.Windows.Forms.Button();
+            this.botonHis = new System.Windows.Forms.Button();
+            this.Tabla = new System.Windows.Forms.DataGridView();
+            this.botonMostrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +57,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 82);
             this.panel1.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -93,48 +107,50 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Filtrar por fecha";
             // 
-            // dateTimePicker1
+            // fecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 101);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
-            this.dateTimePicker1.TabIndex = 18;
+            this.fecha.Location = new System.Drawing.Point(149, 101);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(213, 20);
+            this.fecha.TabIndex = 18;
             // 
-            // button1
+            // botonActualles
             // 
-            this.button1.Location = new System.Drawing.Point(461, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Consultas actuales";
-            this.button1.UseVisualStyleBackColor = true;
+            this.botonActualles.Location = new System.Drawing.Point(529, 101);
+            this.botonActualles.Name = "botonActualles";
+            this.botonActualles.Size = new System.Drawing.Size(116, 23);
+            this.botonActualles.TabIndex = 19;
+            this.botonActualles.Text = "Consultas actuales";
+            this.botonActualles.UseVisualStyleBackColor = true;
+            this.botonActualles.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // botonHis
             // 
-            this.button2.Location = new System.Drawing.Point(680, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Consultas históricas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.botonHis.Location = new System.Drawing.Point(680, 101);
+            this.botonHis.Name = "botonHis";
+            this.botonHis.Size = new System.Drawing.Size(116, 23);
+            this.botonHis.TabIndex = 20;
+            this.botonHis.Text = "Consultas históricas";
+            this.botonHis.UseVisualStyleBackColor = true;
+            this.botonHis.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
+            // Tabla
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 202);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(761, 229);
-            this.dataGridView1.TabIndex = 21;
+            this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabla.Location = new System.Drawing.Point(35, 202);
+            this.Tabla.Name = "Tabla";
+            this.Tabla.Size = new System.Drawing.Size(761, 229);
+            this.Tabla.TabIndex = 21;
             // 
-            // pictureBox1
+            // botonMostrar
             // 
-            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.botonMostrar.Location = new System.Drawing.Point(420, 102);
+            this.botonMostrar.Name = "botonMostrar";
+            this.botonMostrar.Size = new System.Drawing.Size(75, 23);
+            this.botonMostrar.TabIndex = 22;
+            this.botonMostrar.Text = "Mostrar";
+            this.botonMostrar.UseVisualStyleBackColor = true;
+            this.botonMostrar.Click += new System.EventHandler(this.botonMostrar_Click);
             // 
             // VerReservaSalones
             // 
@@ -142,10 +158,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.botonMostrar);
+            this.Controls.Add(this.Tabla);
+            this.Controls.Add(this.botonHis);
+            this.Controls.Add(this.botonActualles);
+            this.Controls.Add(this.fecha);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -157,8 +174,8 @@
             this.Text = "Ver reservas de salones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +189,35 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker fecha;
+        private System.Windows.Forms.Button botonActualles;
+        private System.Windows.Forms.Button botonHis;
+        private System.Windows.Forms.DataGridView Tabla;
+        private System.Windows.Forms.Button botonMostrar;
+
+        private void CargarReservasPorFecha()
+        {
+            if (fecha == null)
+            {
+                MessageBox.Show("Debes seleccionar una fecha", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Tabla.DataSource = null;
+
+            Tabla.DataSource = ConsultasSalones.ListadoSalonesFecha(fecha.Value);
+        }
+
+        private void CargarReservasActuales()
+        {
+            Tabla.DataSource = null;
+            Tabla.DataSource = ConsultasSalones.ListadoSalonesActual();
+        }
+        private void CargarReservasHistorico()
+        {
+            Tabla.DataSource = null;
+            Tabla.DataSource = ConsultasSalones.ListadoSalonesHis();
+        }
+
+        
     }
 }

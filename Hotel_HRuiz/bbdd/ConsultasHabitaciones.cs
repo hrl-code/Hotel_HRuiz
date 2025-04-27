@@ -21,7 +21,7 @@ namespace bbdd
                 MySqlCommand comando = new MySqlCommand(consulta, conn);
                 comando.Parameters.AddWithValue("?dniCliente", h.DniCliente);
                 comando.Parameters.AddWithValue("?fechaEntrada", h.FechaEntrada);
-                comando.Parameters.AddWithValue("?fechaSalida", h.FachaSalida);
+                comando.Parameters.AddWithValue("?fechaSalida", h.FechaSalida);
                 comando.Parameters.AddWithValue("?tipoHabitacion", h.TiposHabitacion);
                 comando.Parameters.AddWithValue("?noches", h.Noches);
                 comando.Parameters.AddWithValue("?precioTotal", h.PrecioTotal);

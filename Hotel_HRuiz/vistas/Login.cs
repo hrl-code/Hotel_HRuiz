@@ -22,5 +22,10 @@ namespace Hotel_HRuiz
         {
             Entrar();
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

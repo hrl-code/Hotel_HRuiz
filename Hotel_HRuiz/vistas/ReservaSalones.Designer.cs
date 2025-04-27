@@ -1,4 +1,10 @@
-﻿namespace Hotel_HRuiz.vistas
+﻿using bbdd;
+using Hotel_HRuiz.bbdd;
+using Hotel_HRuiz.modelo;
+using System.Windows.Forms;
+using System;
+
+namespace Hotel_HRuiz.vistas
 {
     partial class ReservaSalones
     {
@@ -35,9 +41,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dateEntrada_RS = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.Factura = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBoxDatosReserva_RS = new System.Windows.Forms.GroupBox();
+            this.campoNumPersonas_RS = new System.Windows.Forms.TextBox();
             this.botonRegistrarCliente_RS = new System.Windows.Forms.Button();
             this.campoLocalidad_RS = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,7 +68,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.campoNumPersonas_RS = new System.Windows.Forms.TextBox();
             this.groupBoxDatosReserva_RS.SuspendLayout();
             this.groupBoxDatosCliente_RS.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,6 +83,7 @@
             this.botonRegistrarReserva_RS.TabIndex = 12;
             this.botonRegistrarReserva_RS.Text = "Registrar Reserva";
             this.botonRegistrarReserva_RS.UseVisualStyleBackColor = false;
+            this.botonRegistrarReserva_RS.Click += new System.EventHandler(this.botonRegistrarReserva_RS_Click);
             // 
             // panel2
             // 
@@ -90,6 +97,12 @@
             // comboCatering_RS
             // 
             this.comboCatering_RS.FormattingEnabled = true;
+            this.comboCatering_RS.Items.AddRange(new object[] {
+            "Seleccione",
+            "Almuerzo",
+            "Comida",
+            "Desayuno",
+            "Cena"});
             this.comboCatering_RS.Location = new System.Drawing.Point(174, 71);
             this.comboCatering_RS.Name = "comboCatering_RS";
             this.comboCatering_RS.Size = new System.Drawing.Size(121, 21);
@@ -132,13 +145,13 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Fecha";
             // 
-            // textBox8
+            // Factura
             // 
-            this.textBox8.Location = new System.Drawing.Point(533, 112);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(308, 383);
-            this.textBox8.TabIndex = 14;
+            this.Factura.Location = new System.Drawing.Point(533, 112);
+            this.Factura.Multiline = true;
+            this.Factura.Name = "Factura";
+            this.Factura.Size = new System.Drawing.Size(308, 383);
+            this.Factura.TabIndex = 14;
             // 
             // label13
             // 
@@ -165,6 +178,13 @@
             this.groupBoxDatosReserva_RS.TabStop = false;
             this.groupBoxDatosReserva_RS.Text = "DATOS DE LA RESERVA";
             // 
+            // campoNumPersonas_RS
+            // 
+            this.campoNumPersonas_RS.Location = new System.Drawing.Point(174, 42);
+            this.campoNumPersonas_RS.Name = "campoNumPersonas_RS";
+            this.campoNumPersonas_RS.Size = new System.Drawing.Size(100, 20);
+            this.campoNumPersonas_RS.TabIndex = 6;
+            // 
             // botonRegistrarCliente_RS
             // 
             this.botonRegistrarCliente_RS.Location = new System.Drawing.Point(156, 263);
@@ -173,6 +193,7 @@
             this.botonRegistrarCliente_RS.TabIndex = 17;
             this.botonRegistrarCliente_RS.Text = "Registrar Cliente";
             this.botonRegistrarCliente_RS.UseVisualStyleBackColor = true;
+            this.botonRegistrarCliente_RS.Click += new System.EventHandler(this.botonRegistrarCliente_RS_Click);
             // 
             // campoLocalidad_RS
             // 
@@ -216,6 +237,7 @@
             this.button3.TabIndex = 15;
             this.button3.Text = "Generar Factura";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // campoDireccion_RS
             // 
@@ -301,6 +323,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Comprobar DNI";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // campoDni_RS
             // 
@@ -388,13 +411,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // campoNumPersonas_RS
-            // 
-            this.campoNumPersonas_RS.Location = new System.Drawing.Point(174, 42);
-            this.campoNumPersonas_RS.Name = "campoNumPersonas_RS";
-            this.campoNumPersonas_RS.Size = new System.Drawing.Size(100, 20);
-            this.campoNumPersonas_RS.TabIndex = 6;
-            // 
             // ReservaSalones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,7 +419,7 @@
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.botonRegistrarReserva_RS);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.Factura);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBoxDatosReserva_RS);
             this.Controls.Add(this.button3);
@@ -434,7 +450,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateEntrada_RS;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox Factura;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBoxDatosReserva_RS;
         private System.Windows.Forms.Button botonRegistrarCliente_RS;
@@ -461,5 +477,192 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox campoNumPersonas_RS;
+
+        public void BotonRegistrarCliente()
+        {
+            if (Hotel_HRuiz.Utilidades.CampoVacio(campoNombre_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo nombre esta vacio");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoApellidos_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo apellidos esta vacio");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoTelefono_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo telefono esta vacio");
+            }
+            else if (!Hotel_HRuiz.Utilidades.EnteroCorrecto(campoTelefono_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzarAlertaEntero(this, "El campo telefono es numerico");
+            }
+            else if (!Hotel_HRuiz.Utilidades.FormatoTelefono(campoTelefono_RS.Text))
+            {
+                Hotel_HRuiz.Utilidades.LanzarTelefono(this, "El telefono no es valido");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoEmail_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo email esta vacio");
+            }
+            else if (!Hotel_HRuiz.Utilidades.CorreoCorrecto(campoEmail_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCorreo(this, "El email no es valido");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoDireccion_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo direccion esta vacio");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoCP_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo cp esta vacio");
+            }
+            else if (!Hotel_HRuiz.Utilidades.EnteroCorrecto(campoCP_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzarAlertaEntero(this, "El campo cp es numerico");
+            }
+            else if (!Hotel_HRuiz.Utilidades.FormatoCP(campoCP_RS.Text))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCp(this, "El cp no es valido");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoLocalidad_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo localidad esta vacio");
+            }
+            else
+            {
+                Cliente c = new Cliente(
+                    campoDni_RS.Text.ToUpper(),
+                    campoNombre_RS.Text,
+                    campoApellidos_RS.Text,
+                    int.Parse(campoTelefono_RS.Text),
+                    campoEmail_RS.Text,
+                    campoDireccion_RS.Text,
+                    int.Parse(campoCP_RS.Text),
+                    campoLocalidad_RS.Text
+                );
+
+                if (ConsultasClientes.RegistrarCliente(c))
+                {
+                    MessageBox.Show("Cliente registrado correctamente");
+
+                    campoDni_RS.Enabled = false;
+                    campoNombre_RS.Enabled = false;
+                    campoApellidos_RS.Enabled = false;
+                    campoTelefono_RS.Enabled = false;
+                    campoEmail_RS.Enabled = false;
+                    campoDireccion_RS.Enabled = false;
+                    campoCP_RS.Enabled = false;
+                    campoLocalidad_RS.Enabled = false;
+                    botonRegistrarReserva_RS.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error en el registro. Comprueba el formulario");
+                    campoDni_RS.Enabled = true;
+                    campoNombre_RS.Enabled = true;
+                    campoApellidos_RS.Enabled = true;
+                    campoTelefono_RS.Enabled = true;
+                    campoEmail_RS.Enabled = true;
+                    campoDireccion_RS.Enabled = true;
+                    campoCP_RS.Enabled = true;
+                    campoLocalidad_RS.Enabled = true;
+                    botonRegistrarReserva_RS.Enabled = false;
+                }
+            }
+        }
+
+        public void BotonComDni()
+        {
+            if (Hotel_HRuiz.Utilidades.CampoVacio(campoDni_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo dni esta vacio");
+            }
+            else if (!Hotel_HRuiz.Utilidades.FormatoDNI(campoDni_RS.Text.ToUpper()))
+            {
+                Hotel_HRuiz.Utilidades.LanzarFormatoDni(this, "El formato del dni no es correcto");
+            }
+            else if (!Hotel_HRuiz.Utilidades.DniValido(campoDni_RS.Text.ToUpper()))
+            {
+                Hotel_HRuiz.Utilidades.LanzarFormatoDniValido(this, "El dni no es valido");
+            }
+            else if (ConsultasClientes.ComprobarDni(campoDni_RS.Text.ToUpper()))
+            {
+                Cliente c = ConsultasClientes.RescataDatosCliente(campoDni_RS.Text.ToUpper());
+
+                campoNombre_RS.Text = c.Nombre;
+                campoApellidos_RS.Text = c.Apellidos;
+                campoTelefono_RS.Text = c.Telefono.ToString();
+                campoEmail_RS.Text = c.Email;
+                campoDireccion_RS.Text = c.Direccion;
+                campoCP_RS.Text = c.Cp.ToString();
+                campoLocalidad_RS.Text = c.Localidad;
+                campoNombre_RS.Enabled = false;
+                campoApellidos_RS.Enabled = false;
+                campoTelefono_RS.Enabled = false;
+                campoEmail_RS.Enabled = false;
+                campoDireccion_RS.Enabled = false;
+                campoCP_RS.Enabled = false;
+                campoLocalidad_RS.Enabled = false;
+                botonRegistrarCliente_RS.Enabled = false;
+                botonRegistrarReserva_RS.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("No existen clientes registrados con ese DNI");
+                campoNombre_RS.Enabled = true;
+                campoApellidos_RS.Enabled = true;
+                campoTelefono_RS.Enabled = true;
+                campoEmail_RS.Enabled = true;
+                campoDireccion_RS.Enabled = true;
+                campoCP_RS.Enabled = true;
+                campoLocalidad_RS.Enabled = true;
+                botonRegistrarCliente_RS.Enabled = true;
+            }
+        }
+
+        public void BotonReserva()
+        {
+            DateTime d = DateTime.Now;
+
+            if (dateEntrada_RS.Value < d)
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlerta(this, "La fecha tiene que ser posterior a la actual");
+            }
+            else if (Hotel_HRuiz.Utilidades.CampoVacio(campoNumPersonas_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaCampoVacio(this, "El campo numero de personas esta vacio");
+            }
+            else if (!Hotel_HRuiz.Utilidades.EnteroCorrecto(campoNumPersonas_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzarAlertaEntero(this, "El campo numero de personas es numerico");
+            }
+            else if (Hotel_HRuiz.Utilidades.ComboSinSeleccionar(comboCatering_RS))
+            {
+                Hotel_HRuiz.Utilidades.LanzaAlertaComboVacio(this, comboCatering_RS);
+            }
+            else
+            {
+                 s = new Salon(
+                    campoDni_RS.Text.ToUpper(),
+                    dateEntrada_RS.Value,
+                    int.Parse(campoNumPersonas_RS.Text),
+                    comboCatering_RS.SelectedItem.ToString(),
+                    ConsultasEmpleados.GuardarDNI(Login.miNombre)
+                );
+
+                Factura.Text = "";
+
+                if (ConsultasSalones.RegistrarSalon(s))
+                {
+                    MessageBox.Show("Reserva registrada correctamente");
+                    button3.Enabled = true; // Assuming button3 is the equivalent of botonFactura
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione el tipo de catering.");
+                }
+
+            }
+        }
     }
 }

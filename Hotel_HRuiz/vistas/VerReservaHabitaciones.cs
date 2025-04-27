@@ -16,5 +16,25 @@ namespace Hotel_HRuiz.vistas
         {
             InitializeComponent();
         }
+
+        private void botonMostrar_Click(object sender, EventArgs e)
+        {
+            CargarReservasPorFecha();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CargarReservasActuales();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CargarReservasHistorico();
+        }
+
+        private void fecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

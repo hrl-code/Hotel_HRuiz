@@ -16,5 +16,10 @@ namespace Hotel_HRuiz.vistas
         {
             InitializeComponent();
         }
+
+        private void botonRegistrarEmpleado_RE_Click(object sender, EventArgs e)
+        {
+            RegistrarEmp();
+        }
     }
 }

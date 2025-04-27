@@ -1,4 +1,10 @@
-﻿namespace Hotel_HRuiz.vistas
+﻿using bbdd;
+using Hotel_HRuiz.bbdd;
+using Hotel_HRuiz.modelo;
+using System.Windows.Forms;
+using System;
+
+namespace Hotel_HRuiz.vistas
 {
     partial class AltaEmpleado
     {
@@ -43,17 +49,17 @@
             this.campoDni_RE = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.campoApellidos_RE = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimeContrato_RE = new System.Windows.Forms.DateTimePicker();
-            this.comboTurno_RE = new System.Windows.Forms.ComboBox();
-            this.campoUsuario_RE = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.campoPass_RE = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.campoUsuario_RE = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboTurno_RE = new System.Windows.Forms.ComboBox();
+            this.dateTimeContrato_RE = new System.Windows.Forms.DateTimePicker();
+            this.campoApellidos_RE = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,6 +75,7 @@
             this.botonRegistrarEmpleado_RE.TabIndex = 17;
             this.botonRegistrarEmpleado_RE.Text = "Registrar Empleado";
             this.botonRegistrarEmpleado_RE.UseVisualStyleBackColor = false;
+            this.botonRegistrarEmpleado_RE.Click += new System.EventHandler(this.botonRegistrarEmpleado_RE_Click);
             // 
             // campoSalario_RE
             // 
@@ -215,68 +222,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS DEL CLIENTE";
             // 
-            // campoApellidos_RE
+            // campoPass_RE
             // 
-            this.campoApellidos_RE.Location = new System.Drawing.Point(156, 96);
-            this.campoApellidos_RE.Name = "campoApellidos_RE";
-            this.campoApellidos_RE.Size = new System.Drawing.Size(183, 20);
-            this.campoApellidos_RE.TabIndex = 6;
+            this.campoPass_RE.Location = new System.Drawing.Point(156, 278);
+            this.campoPass_RE.Name = "campoPass_RE";
+            this.campoPass_RE.Size = new System.Drawing.Size(128, 20);
+            this.campoPass_RE.TabIndex = 23;
             // 
-            // panel1
+            // label11
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 82);
-            this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Registro de empleados";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 541);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(884, 20);
-            this.panel2.TabIndex = 5;
-            // 
-            // dateTimeContrato_RE
-            // 
-            this.dateTimeContrato_RE.Location = new System.Drawing.Point(156, 175);
-            this.dateTimeContrato_RE.Name = "dateTimeContrato_RE";
-            this.dateTimeContrato_RE.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeContrato_RE.TabIndex = 18;
-            // 
-            // comboTurno_RE
-            // 
-            this.comboTurno_RE.FormattingEnabled = true;
-            this.comboTurno_RE.Location = new System.Drawing.Point(156, 201);
-            this.comboTurno_RE.Name = "comboTurno_RE";
-            this.comboTurno_RE.Size = new System.Drawing.Size(121, 21);
-            this.comboTurno_RE.TabIndex = 19;
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(40, 285);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Contraseña";
             // 
             // campoUsuario_RE
             // 
@@ -295,22 +256,68 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Usuario";
             // 
-            // campoPass_RE
+            // comboTurno_RE
             // 
-            this.campoPass_RE.Location = new System.Drawing.Point(156, 278);
-            this.campoPass_RE.Name = "campoPass_RE";
-            this.campoPass_RE.Size = new System.Drawing.Size(128, 20);
-            this.campoPass_RE.TabIndex = 23;
+            this.comboTurno_RE.FormattingEnabled = true;
+            this.comboTurno_RE.Location = new System.Drawing.Point(156, 201);
+            this.comboTurno_RE.Name = "comboTurno_RE";
+            this.comboTurno_RE.Size = new System.Drawing.Size(121, 21);
+            this.comboTurno_RE.TabIndex = 19;
             // 
-            // label11
+            // dateTimeContrato_RE
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label11.Location = new System.Drawing.Point(40, 285);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Contraseña";
+            this.dateTimeContrato_RE.Location = new System.Drawing.Point(156, 175);
+            this.dateTimeContrato_RE.Name = "dateTimeContrato_RE";
+            this.dateTimeContrato_RE.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeContrato_RE.TabIndex = 18;
+            // 
+            // campoApellidos_RE
+            // 
+            this.campoApellidos_RE.Location = new System.Drawing.Point(156, 96);
+            this.campoApellidos_RE.Name = "campoApellidos_RE";
+            this.campoApellidos_RE.Size = new System.Drawing.Size(183, 20);
+            this.campoApellidos_RE.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(884, 82);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Registro de empleados";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 541);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(884, 20);
+            this.panel2.TabIndex = 5;
             // 
             // AltaEmpleado
             // 
@@ -363,5 +370,98 @@
         private System.Windows.Forms.TextBox campoUsuario_RE;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboTurno_RE;
+
+        public void RegistrarEmp()
+        {
+            DateTime d = DateTime.Now;
+
+            if (Utilidades.CampoVacio(campoDni_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo dni esta vacio");
+            }
+            else if (!Utilidades.FormatoDNI(campoDni_RE.Text.ToUpper()))
+            {
+                Utilidades.LanzarFormatoDni(this, "El formato del dni no es correcto");
+            }
+            else if (!Utilidades.DniValido(campoDni_RE.Text.ToUpper()))
+            {
+                Utilidades.LanzarFormatoDniValido(this, "El dni no es valido");
+            }
+            else if (Utilidades.CampoVacio(campoNombre_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo nombre esta vacio");
+            }
+            else if (Utilidades.CampoVacio(campoApellidos_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo apellidos esta vacio");
+            }
+            else if (Utilidades.CampoVacio(campoTelefono_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo telefono esta vacio");
+            }
+            else if (!Utilidades.EnteroCorrecto(campoTelefono_RE))
+            {
+                Utilidades.LanzarAlertaEntero(this, "El campo telefono es numerico");
+            }
+            else if (!Utilidades.FormatoTelefono(campoTelefono_RE.Text))
+            {
+                Utilidades.LanzarTelefono(this, "El telefono no es valido");
+            }
+            else if (Utilidades.CampoVacio(campoEmail_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo email esta vacio");
+            }
+            else if (!Utilidades.CorreoCorrecto(campoEmail_RE))
+            {
+                Utilidades.LanzaAlertaCorreo(this, "El email no es valido");
+            }
+            else if (dateTimeContrato_RE.Value < d)
+            {
+                Utilidades.LanzaAlerta(this, "La fecha tiene que ser posterior a la actual");
+            }
+            else if (Utilidades.ComboSinSeleccionar(comboTurno_RE))
+            {
+                Utilidades.LanzaAlertaComboVacio(this, comboTurno_RE);
+            }
+            else if (Utilidades.CampoVacio(campoSalario_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo slario base esta vacio");
+            }
+            else if (!Utilidades.EnteroCorrecto(campoSalario_RE))
+            {
+                Utilidades.LanzarAlertaEntero(this, "El campo salario base es numerico");
+            }
+            else if (Utilidades.CampoVacio(campoUsuario_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo usuario esta vacio");
+            }
+            else if (Utilidades.CampoVacio(campoPass_RE))
+            {
+                Utilidades.LanzaAlertaCampoVacio(this, "El campo contraseña esta vacio");
+            }
+            else
+            {
+                Empleado e = new Empleado(
+                                   campoDni_RE.Text.ToUpper(),
+                                   campoNombre_RE.Text,
+                                   campoApellidos_RE.Text,
+                                   int.Parse(campoTelefono_RE.Text),
+                                   campoEmail_RE.Text,
+                                   dateTimeContrato_RE.Value,
+                                   comboTurno_RE.SelectedItem.ToString(),
+                                   int.Parse(campoSalario_RE.Text),
+                                   campoUsuario_RE.Text,
+                                   campoPass_RE.Text
+                               );
+                if (ConsultasEmpleados.RegistrarEmpleado(e))
+                {
+                    MessageBox.Show("Empleado registrado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar el empleado");
+                }
+            }
+        }
     }
 }

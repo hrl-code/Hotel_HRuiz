@@ -1,4 +1,8 @@
-﻿namespace Hotel_HRuiz.vistas
+﻿using bbdd;
+using Hotel_HRuiz.bbdd;
+using System.Windows.Forms;
+
+namespace Hotel_HRuiz.vistas
 {
     partial class VerEmpleados
     {
@@ -29,16 +33,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 82);
             this.panel1.TabIndex = 30;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -99,23 +113,21 @@
             this.label13.TabIndex = 32;
             this.label13.Text = "Listado de empleados";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hotel_HRuiz.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(766, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Seleccione",
+            "Todos",
+            "Mañanas",
+            "Tardes",
+            "Noches",
+            "Partido"});
             this.comboBox1.Location = new System.Drawing.Point(152, 100);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 36;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // VerEmpleados
             // 
@@ -137,8 +149,8 @@
             this.Text = "Ver empleados";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +166,40 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
+
+
+
+        public void comboTurno()
+        {
+            if (comboBox1.SelectedItem.ToString() == "Todos")
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ConsultasEmpleados.ListadoEmpleadosTodos();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Mañanas")
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ConsultasEmpleados.ListadoEmpleadosMañanas();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Tardes")
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ConsultasEmpleados.ListadoEmpleadosTardes();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Noches")
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ConsultasEmpleados.ListadoEmpleadosNoches();
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Partido")
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = ConsultasEmpleados.ListadoEmpleadosPartido();
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }
+        }
     }
 }

@@ -165,6 +165,7 @@ namespace Hotel_HRuiz
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -202,7 +203,6 @@ namespace Hotel_HRuiz
 
                 this.Hide();
 
-                p.FormClosed += (s, args) => this.Close();
             }
             else
             {
