@@ -136,6 +136,10 @@ namespace Hotel_HRuiz.vistas
             // 
             // Tabla
             // 
+            this.Tabla.AllowUserToAddRows = false;
+            this.Tabla.AllowUserToDeleteRows = false;
+            this.Tabla.AllowUserToResizeColumns = false;
+            this.Tabla.AllowUserToResizeRows = false;
             this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabla.Location = new System.Drawing.Point(35, 202);
             this.Tabla.Name = "Tabla";
@@ -171,6 +175,7 @@ namespace Hotel_HRuiz.vistas
             this.MaximumSize = new System.Drawing.Size(1000, 650);
             this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "VerReservaSalones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ver reservas de salones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

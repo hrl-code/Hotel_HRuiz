@@ -79,6 +79,10 @@ namespace Hotel_HRuiz.vistas
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(35, 202);
             this.dataGridView1.Name = "dataGridView1";
@@ -145,7 +149,7 @@ namespace Hotel_HRuiz.vistas
             this.MaximumSize = new System.Drawing.Size(1000, 650);
             this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "VerEmpleados";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ver empleados";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

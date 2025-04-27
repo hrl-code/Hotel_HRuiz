@@ -87,7 +87,7 @@ namespace Hotel_HRuiz.modelo
                 + "Fecha: " + fecha + Environment.NewLine
                 + "Número de Personas: " + numPersonas + Environment.NewLine
                 + "Catering: " + caterin + Environment.NewLine
-                + "Total de factura: " + precio + Environment.NewLine
+                + "Total de factura: " + precio + "€" + Environment.NewLine
                 + "Dni Empleado: " + dniEmpleado + Environment.NewLine;
         }
     }

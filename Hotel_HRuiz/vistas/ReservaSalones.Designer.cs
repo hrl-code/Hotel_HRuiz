@@ -197,6 +197,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoLocalidad_RS
             // 
+            this.campoLocalidad_RS.Enabled = false;
             this.campoLocalidad_RS.Location = new System.Drawing.Point(123, 226);
             this.campoLocalidad_RS.Name = "campoLocalidad_RS";
             this.campoLocalidad_RS.Size = new System.Drawing.Size(183, 20);
@@ -214,6 +215,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoCP_RS
             // 
+            this.campoCP_RS.Enabled = false;
             this.campoCP_RS.Location = new System.Drawing.Point(123, 200);
             this.campoCP_RS.Name = "campoCP_RS";
             this.campoCP_RS.Size = new System.Drawing.Size(128, 20);
@@ -241,6 +243,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoDireccion_RS
             // 
+            this.campoDireccion_RS.Enabled = false;
             this.campoDireccion_RS.Location = new System.Drawing.Point(123, 174);
             this.campoDireccion_RS.Name = "campoDireccion_RS";
             this.campoDireccion_RS.Size = new System.Drawing.Size(231, 20);
@@ -248,6 +251,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoEmail_RS
             // 
+            this.campoEmail_RS.Enabled = false;
             this.campoEmail_RS.Location = new System.Drawing.Point(123, 148);
             this.campoEmail_RS.Name = "campoEmail_RS";
             this.campoEmail_RS.Size = new System.Drawing.Size(183, 20);
@@ -265,6 +269,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoTelefono_RS
             // 
+            this.campoTelefono_RS.Enabled = false;
             this.campoTelefono_RS.Location = new System.Drawing.Point(123, 122);
             this.campoTelefono_RS.Name = "campoTelefono_RS";
             this.campoTelefono_RS.Size = new System.Drawing.Size(128, 20);
@@ -282,6 +287,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoApellidos_RS
             // 
+            this.campoApellidos_RS.Enabled = false;
             this.campoApellidos_RS.Location = new System.Drawing.Point(123, 96);
             this.campoApellidos_RS.Name = "campoApellidos_RS";
             this.campoApellidos_RS.Size = new System.Drawing.Size(183, 20);
@@ -299,6 +305,7 @@ namespace Hotel_HRuiz.vistas
             // 
             // campoNombre_RS
             // 
+            this.campoNombre_RS.Enabled = false;
             this.campoNombre_RS.Location = new System.Drawing.Point(123, 70);
             this.campoNombre_RS.Name = "campoNombre_RS";
             this.campoNombre_RS.Size = new System.Drawing.Size(114, 20);
@@ -425,9 +432,11 @@ namespace Hotel_HRuiz.vistas
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBoxDatosCliente_RS);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "ReservaSalones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservaSalones";
             this.groupBoxDatosReserva_RS.ResumeLayout(false);
             this.groupBoxDatosReserva_RS.PerformLayout();

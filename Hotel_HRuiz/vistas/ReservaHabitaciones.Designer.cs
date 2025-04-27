@@ -436,7 +436,7 @@ namespace Hotel_HRuiz.vistas
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "ReservaHabitaciones";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReservaHabitaciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

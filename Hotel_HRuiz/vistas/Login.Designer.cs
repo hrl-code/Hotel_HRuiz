@@ -54,16 +54,16 @@ namespace Hotel_HRuiz
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(378, 0);
+            this.panel1.Location = new System.Drawing.Point(525, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 374);
+            this.panel1.Size = new System.Drawing.Size(320, 461);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Hotel_HRuiz.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(96, 279);
+            this.pictureBox2.Location = new System.Drawing.Point(119, 379);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(71, 71);
@@ -83,7 +83,7 @@ namespace Hotel_HRuiz
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(201, 222);
+            this.groupBox1.Size = new System.Drawing.Size(261, 304);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LOGIN";
@@ -91,7 +91,7 @@ namespace Hotel_HRuiz
             // botonEntrar_L
             // 
             this.botonEntrar_L.BackColor = System.Drawing.Color.Navy;
-            this.botonEntrar_L.Location = new System.Drawing.Point(50, 160);
+            this.botonEntrar_L.Location = new System.Drawing.Point(88, 244);
             this.botonEntrar_L.Margin = new System.Windows.Forms.Padding(2);
             this.botonEntrar_L.Name = "botonEntrar_L";
             this.botonEntrar_L.Size = new System.Drawing.Size(87, 25);
@@ -102,7 +102,7 @@ namespace Hotel_HRuiz
             // 
             // campoPass_L
             // 
-            this.campoPass_L.Location = new System.Drawing.Point(88, 104);
+            this.campoPass_L.Location = new System.Drawing.Point(116, 143);
             this.campoPass_L.Margin = new System.Windows.Forms.Padding(2);
             this.campoPass_L.Name = "campoPass_L";
             this.campoPass_L.Size = new System.Drawing.Size(91, 20);
@@ -113,7 +113,7 @@ namespace Hotel_HRuiz
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 109);
+            this.label2.Location = new System.Drawing.Point(48, 148);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
@@ -122,7 +122,7 @@ namespace Hotel_HRuiz
             // 
             // campoUsuario_L
             // 
-            this.campoUsuario_L.Location = new System.Drawing.Point(89, 57);
+            this.campoUsuario_L.Location = new System.Drawing.Point(117, 96);
             this.campoUsuario_L.Margin = new System.Windows.Forms.Padding(2);
             this.campoUsuario_L.Name = "campoUsuario_L";
             this.campoUsuario_L.Size = new System.Drawing.Size(90, 20);
@@ -132,7 +132,7 @@ namespace Hotel_HRuiz
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 62);
+            this.label1.Location = new System.Drawing.Point(49, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
@@ -146,7 +146,7 @@ namespace Hotel_HRuiz
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 374);
+            this.pictureBox1.Size = new System.Drawing.Size(528, 461);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -155,13 +155,13 @@ namespace Hotel_HRuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 374);
+            this.ClientSize = new System.Drawing.Size(845, 461);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(650, 413);
-            this.MinimumSize = new System.Drawing.Size(650, 413);
+            this.MaximumSize = new System.Drawing.Size(861, 500);
+            this.MinimumSize = new System.Drawing.Size(861, 500);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";

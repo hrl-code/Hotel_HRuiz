@@ -18,6 +18,7 @@ namespace Hotel_HRuiz.vistas
         public ReservaSalones()
         {
             InitializeComponent();
+            comboCatering_RS.SelectedIndex = 0;
         }
 
         private void button3_Click(object sender, EventArgs e)

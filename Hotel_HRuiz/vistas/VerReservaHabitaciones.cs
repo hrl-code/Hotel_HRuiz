@@ -15,6 +15,7 @@ namespace Hotel_HRuiz.vistas
         public VerReservaHabitaciones()
         {
             InitializeComponent();
+            CargarReservasActuales();
         }
 
         private void botonMostrar_Click(object sender, EventArgs e)
